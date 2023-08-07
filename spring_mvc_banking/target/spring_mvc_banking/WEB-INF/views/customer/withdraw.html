@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WithDraw</title>
+    <link rel="stylesheet" href="/assets/bootstrap/v5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/v5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="col-lg-6">
+            <h1>WithDraw</h1>
+        </div>
+        <div class="col-lg-6 header-right-btn">
+            <a href="/customers">
+                <button class="btn btn-outline-light ">
+                    <i class="fas fa-list-alt"></i>
+                    List Customers
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+
+        <div th:if="${success}">
+            <script>
+                window.onload = function (){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Rút tiền thành công',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            </script>
+        </div>
+
+        <form class="row" method="post" th:object="${withdraw}">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Customer ID</label>
+                    <input type="text" class="form-control" th:field="*{customer.id}" readonly>
+                </div>
+                <div class="col-lg-6">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" th:field="*{customer.fullName}" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Current Balance</label>
+                    <input type="text" class="form-control num-space" th:field="*{customer.balance}" readonly>
+                </div>
+                <div class="col-lg-6">
+                    <label>Transaction Amount</label>
+                    <input type="number" class="form-control num-space" name="transaction_Amount">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <a href="">
+                        <button type="submit" class="btn btn-outline-danger">
+                            <i class="fas fa-minus-circle"></i>
+                            Withdraw
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+<th:block th:replace="layout/script" />
+</body>
+</html>

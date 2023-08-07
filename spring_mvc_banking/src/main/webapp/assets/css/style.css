@@ -1,0 +1,47 @@
+header{
+    background-color: #299be4;
+    height: 80px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.header-right-btn{
+    display: flex;
+    justify-content: end;
+    gap:10px;
+}
+.content table thead tr th{
+    background-color: #4caf50;
+    color: #fff;
+}
+
+label {
+    margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    /*background-color: #3b4654;*/
+    border-radius: 2px;
+    /*border: 1px solid #4a5869;*/
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 38px;
+    /*color: #ffffff !important;*/
+    font-size: 14px;
+}
+
+span.error {
+    color: red;
+}
+
+footer {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    margin-bottom: 0 !important;
+    width: 100%;
+}
